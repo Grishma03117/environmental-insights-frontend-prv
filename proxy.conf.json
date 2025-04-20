@@ -1,0 +1,13 @@
+{
+    "/predict": {
+      "target": "http://environmental-insights-api-dns.westus2.azurecontainer.io:8000",
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/weather-events": {
+      "target": "http://environmental-insights-api-dns.westus2.azurecontainer.io:8000",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
+  

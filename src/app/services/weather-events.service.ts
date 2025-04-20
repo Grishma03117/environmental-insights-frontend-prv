@@ -3,20 +3,24 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WeatherEventsService {
+  constructor(private http: HttpClient) {}
 
-  private apiUrl = 'http://127.0.0.1:5000/weather-events';  // Flask backend URL
-
-  constructor(private http: HttpClient) { }
-
-  getWeatherEvent(city: string, startTime: string, endTime: string): Observable<any> {
+  getWeatherEvent(
+    city: string,
+    startTime: string,
+    endTime: string
+  ): Observable<any> {
     let params = new HttpParams()
       .set('city', city)
-      .set('start_time', startTime)
-      .set('end_time', endTime);
+      .set('startTime', startTime)
+      .set('endTime', endTime);
 
-    return this.http.get<{message: string}>(this.apiUrl, { params });
+    return this.http.get<{ message: string }>(
+      'http://environmental-insights-api-dns.westus2.azurecontainer.io:8000/weather-events',
+      { params }
+    );
   }
 }
