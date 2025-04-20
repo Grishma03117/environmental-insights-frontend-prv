@@ -39,7 +39,7 @@ export class WeatherPredictorComponent {
 
     this.http
       .post<any>(
-        'http://environmental-insights-api-dns.westus2.azurecontainer.io:8000s/predict',
+        'https://environmental-insights-api-dns.westus2.azurecontainer.io:8000/predict',
         body,
         { headers }
       )
