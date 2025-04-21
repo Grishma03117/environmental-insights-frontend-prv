@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-weather-predictor',
   templateUrl: './weather-predictor.component.html',
+  styleUrl: './weather-predictor.component.scss',
   standalone: true,
   imports: [CommonModule, FormsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -39,7 +40,7 @@ export class WeatherPredictorComponent {
 
     this.http
       .post<any>(
-        'https://environmental-insights-api-dns.westus2.azurecontainer.io:8000/predict',
+        'http://environmental-insights-api-dns.westus2.azurecontainer.io:8000/predict',
         body,
         { headers }
       )

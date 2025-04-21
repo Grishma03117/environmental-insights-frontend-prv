@@ -19,7 +19,7 @@ export class WeatherEventsService {
       .set('endTime', endTime);
 
     return this.http.get<{ message: string }>(
-      'https://environmental-insights-api-dns.westus2.azurecontainer.io:8000/weather-events',
+      'http://environmental-insights-api-dns.westus2.azurecontainer.io:8000/weather-events',
       { params }
     );
   }

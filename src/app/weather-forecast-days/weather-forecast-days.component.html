@@ -1,0 +1,98 @@
+<div class="container">
+  <h2>Climate Forecast</h2>
+
+  <div class="input-group">
+    <label>City:</label>
+    <input type="text" [(ngModel)]="cityName" placeholder="Enter city name" />
+  </div>
+
+  <div class="input-group">
+    <label>Days:</label>
+    <input type="number" [(ngModel)]="numberOfDays" min="1" max="30" />
+  </div>
+
+  <button (click)="fetchClimateForecast()">Get Forecast</button>
+
+  <p *ngIf="error" class="error">{{ error }}</p>
+
+  <table *ngIf="forecastData.length > 0" class="forecast-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Humidity</th>
+        <th>Pressure</th>
+        <th>Avg Temp (°C)</th>
+        <th>Wind Direction</th>
+        <th>Wind Speed</th>
+        <th>Predicted Event</th>
+        <th>Severity</th>
+        <th>Probability</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let day of forecastData; let i = index">
+        <tr>
+          <td>{{ day.dt * 1000 | date : "mediumDate" }}</td>
+          <td>{{ day.humidity }}</td>
+          <td>{{ day.pressure }}</td>
+          <td>{{ (day.temp.min + day.temp.max) / 2 | number : "1.0-1" }}</td>
+          <td>{{ day.deg }}</td>
+          <td>{{ day.speed }}</td>
+          <td>{{ day.weatherEvent }}</td>
+          <td>{{ day.severity }}</td>
+          <td
+            [ngClass]="{
+              'severity-light': day.severity === 'Light',
+              'severity-moderate': day.severity === 'Moderate',
+              'severity-heavy': day.severity === 'Heavy',
+              'severity-severe': day.severity === 'Severe'
+            }"
+          >
+            {{ day.probability || "N/A" }}
+          </td>
+          <td>
+            <button
+              class="toggle-button"
+              (click)="day.showDetails = !day.showDetails"
+            >
+              {{ day.showDetails ? "Hide Details" : "Show Details" }}
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="day.showDetails">
+          <td colspan="10">
+            <div class="details-container">
+              <h4>Top 3 Predictions</h4>
+              <table class="inner-table">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Severity</th>
+                    <th>Probability</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let pred of day.top_3_predictions">
+                    <td>{{ pred.type }}</td>
+                    <td
+                      [ngClass]="{
+                        'severity-light': pred.severity === 'Light',
+                        'severity-moderate': pred.severity === 'Moderate',
+                        'severity-heavy': pred.severity === 'Heavy',
+                        'severity-severe': pred.severity === 'Severe'
+                      }"
+                    >
+                      {{ pred.severity }}
+                    </td>
+                    <td>{{ pred.probability | percent : "1.0-1" }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

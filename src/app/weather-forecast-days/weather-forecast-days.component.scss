@@ -1,0 +1,148 @@
+.container {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .input-group {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  label {
+    margin-right: 1rem;
+    font-weight: 500;
+  }
+  
+  input {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #388e3c;
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 1.5rem;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .details-container {
+    background-color: #e8f5e9; /* light green tint */
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    border: 1px solid #c8e6c9;
+  }
+  
+  .details-container h4 {
+    margin-top: 0;
+    color: #2e7d32;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+  
+  .inner-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .inner-table th,
+  .inner-table td {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .inner-table th {
+    background-color: #a5d6a7;
+    color: #1b5e20;
+  }
+  
+  .toggle-button {
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background 0.3s;
+  }
+  
+  .toggle-button {
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+  }
+  
+  .toggle-button:hover {
+    background: #81c784;
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .severity-light {
+    background-color: #fff9c4; /* pastel yellow */
+  }
+  
+  .severity-moderate {
+    background-color: #ffe0b2; /* soft orange */
+  }
+  
+  .severity-heavy {
+    background-color: #ef9a9a; /* soft red */
+  }
+  
+  .severity-severe {
+    background-color: #f44336; /* bright red */
+    color: white;
+  }
