@@ -94,7 +94,7 @@ export class WeatherForecastDaysComponent {
 
       return this.http
         .post<any>(
-          'http://environmental-insights-api-dns.westus2.azurecontainer.io:8000/predict',
+          'https://environmental-insights-api-app.azurewebsites.net/predict',
           body,
           { headers }
         )
