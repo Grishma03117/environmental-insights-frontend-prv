@@ -40,7 +40,7 @@ export class WeatherPredictorComponent {
 
     this.http
       .post<any>(
-        'https://environmental-insights-api-app.azurewebsites.net/predict',
+        'https://environmental-insights-api-app-ft.azurewebsites.net/predict',
         body,
         { headers }
       )

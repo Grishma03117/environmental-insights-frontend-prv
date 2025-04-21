@@ -19,7 +19,7 @@ export class WeatherEventsService {
       .set('endTime', endTime);
 
     return this.http.get<{ message: string }>(
-      'https://environmental-insights-api-app.azurewebsites.net/weather-events',
+      'https://environmental-insights-api-app-ft.azurewebsites.net/weather-events',
       { params }
     );
   }
