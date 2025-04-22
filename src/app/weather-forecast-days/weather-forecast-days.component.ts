@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, forkJoin, map, Observable, of } from 'rxjs';
 
+import { environment } from '../../environments/environment.prod';
+
 @Component({
   selector: 'app-weather-forecast-days',
   standalone: true,
@@ -21,7 +23,7 @@ export class WeatherForecastDaysComponent {
 
   fetchClimateForecast() {
     this.error = null;
-    const apiKey = '28d3a133b74fbfbe5297938298848189';
+    const apiKey = environment.openWeatherMapApiKey;
     const url = `https://pro.openweathermap.org/data/2.5/forecast/climate?q=${this.cityName}&appid=${apiKey}&cnt=${this.numberOfDays}`;
 
     if (
