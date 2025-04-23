@@ -1,11 +1,19 @@
 <div class="home-container">
   <h1>🌿 Environmental Insights 🌿</h1>
   <div class="button-group">
-    <button (click)="navigateTo('predictions')">Predict Weather Event</button>
-    <button (click)="navigateTo('weather-forecast-days')">
+    <div style="display:flex; gap:1rem;">
+      <button (click)="dataPreprocess()" class="half-size">
+        Preprocess Data
+      </button>
+      <button (click)="trainModel()" class="half-size">Train Model</button>
+    </div>
+    <button (click)="navigateTo('predictions')" class="group-button">
+      Predict Weather Event
+    </button>
+    <button (click)="navigateTo('weather-forecast-days')" class="group-button">
       Weather Forecast
     </button>
-    <button (click)="navigateTo('weather-events')">
+    <button (click)="navigateTo('weather-events')" class="group-button">
       Weather Event Database
     </button>
   </div>

@@ -40,7 +40,6 @@
           <td>{{ day.deg }}</td>
           <td>{{ day.speed }}</td>
           <td>{{ day.weatherEvent }}</td>
-          <td>{{ day.severity }}</td>
           <td
             [ngClass]="{
               'severity-light': day.severity === 'Light',
@@ -49,6 +48,9 @@
               'severity-severe': day.severity === 'Severe'
             }"
           >
+            {{ day.severity }}
+          </td>
+          <td>
             {{ day.probability || "N/A" }}
           </td>
           <td>
